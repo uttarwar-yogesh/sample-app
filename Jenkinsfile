@@ -19,7 +19,7 @@ pipeline {
     stage('Build Docker image') {
       steps{
         script {
-           dockerImage = docker.build("sample-app:${env.BUILD_NUMBER}")
+           dockerImage = docker.build("pdmdevopsdemo:${env.BUILD_NUMBER}")
         }
       }
     }
