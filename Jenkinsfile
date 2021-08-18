@@ -18,7 +18,7 @@ pipeline {
     }
     stage('Deleting Unwanted Docker Images') {
       steps {
-        sh "docker rmi $(docker images -a -q)"
+        sh 'docker image prune -f'
       }
     }
   }
