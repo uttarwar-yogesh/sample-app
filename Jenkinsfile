@@ -16,5 +16,10 @@ pipeline {
         sh "mvn clean deploy -Dmaven.test.skip=true"
       }
     }
+    stage('Deleting Unwanted Docker Images') {
+      steps {
+        sh "docker rmi $(docker images -a -q)"
+      }
+    }
   }
 }
