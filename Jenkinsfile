@@ -11,7 +11,7 @@ pipeline {
         sh "mvn clean install"
       }
     }
-    stage('Publish Maven artifact to nexus') {
+    stage('Publish Maven artifact to azure devops and ACR') {
       steps {
         sh "mvn clean deploy -Dmaven.test.skip=true"
       }
